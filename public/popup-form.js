@@ -37,11 +37,11 @@
       z-index: 9999;
     }
     #circlehq-popup-iframe {
-      width: fit-content;
-      height: fit-content;
+      width: 400px;
+      height: 550px;
       border: none;
       border-radius: 10px;
-     background: rgba(0, 0, 0, 0.5);
+      background: white;
     }
     @media (max-width: 500px) {
       #circlehq-popup-iframe {
