@@ -38,7 +38,8 @@
     }
     #circlehq-popup-iframe {
       width: 500px;
-      height: 650px;
+      height: 600px;
+      overflow: hidden;
       border: none;
       border-radius: 10px;
       background: white;
