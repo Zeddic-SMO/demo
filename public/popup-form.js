@@ -37,8 +37,8 @@
       z-index: 9999;
     }
     #circlehq-popup-iframe {
-      width: 400px;
-      height: 550px;
+      width: 500px;
+      height: 650px;
       border: none;
       border-radius: 10px;
       background: white;
