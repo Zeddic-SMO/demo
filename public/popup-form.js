@@ -7,6 +7,7 @@
   const BUTTON_TEXT = script.getAttribute("data-button-text") || "Open Form";
   const BUTTON_COLOR = script.getAttribute("data-button-color") || "#0052cc";
   const DELAY = parseInt(script.getAttribute("data-delay"), 10) || null;
+  const POSITION = script.getAttribute("data-position") || "center";
 
   // Inject Styles
   const style = document.createElement("style");
@@ -43,6 +44,7 @@
       border: none;
       border-radius: 10px;
       background: white;
+      position: relative;
     }
     @media (max-width: 500px) {
       #circlehq-popup-iframe {
@@ -50,12 +52,34 @@
         height: 90vh;
       }
     }
+    /* Positioning classes */
+    #circlehq-popup-wrapper[data-position="bottom-right"] {
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 24px;
+    }
+    #circlehq-popup-wrapper[data-position="bottom-left"] {
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding: 24px;
+    }
+    #circlehq-popup-wrapper[data-position="top-right"] {
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 24px;
+    }
+    #circlehq-popup-wrapper[data-position="top-left"] {
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 24px;
+    }
   `;
   document.head.appendChild(style);
 
   // Create wrapper
   const wrapper = document.createElement("div");
   wrapper.id = "circlehq-popup-wrapper";
+  wrapper.setAttribute("data-position", POSITION);
   wrapper.innerHTML = `<iframe id="circlehq-popup-iframe" src="${FORM_URL}"></iframe>`;
   document.body.appendChild(wrapper);
 
